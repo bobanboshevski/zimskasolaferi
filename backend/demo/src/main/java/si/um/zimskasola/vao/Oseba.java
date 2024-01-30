@@ -16,16 +16,19 @@ public class Oseba {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String ime, priimek;
+    private String ime, priimek, upr_ime, geslo;
     private int starost;
 
+
     public OsebaDto toDto() {
-        return new OsebaDto(id, ime, priimek, starost);
+        return new OsebaDto(id, ime, priimek, starost, upr_ime, geslo);
     }
 
     public Oseba(OsebaDto dto) {
         setIme(dto.ime());
         setPriimek(dto.priimek());
         setStarost(dto.starost());
+        setUpr_ime(dto.upr_ime());
+        setGeslo(dto.geslo());
     }
 }
