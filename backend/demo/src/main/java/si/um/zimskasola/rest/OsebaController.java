@@ -53,6 +53,7 @@ public class OsebaController {
         } else {
 
             return Response.status(Response.Status.NOT_FOUND).entity(Map.of("error", "User not found")).build();
+            //Response.Status.UNAUTHORIZED
         }
     }
 
