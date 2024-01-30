@@ -4,7 +4,7 @@ import Login from './components/login';
 const App = () => {
   return (
       <div>
-        <h1>My React App</h1>
+        <h1>Nakup interneta</h1>
         <Login />
       </div>
   );

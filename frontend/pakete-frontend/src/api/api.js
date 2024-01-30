@@ -26,7 +26,7 @@ const makeRequest = async (options) => {
 };
 const ApiService = {
     get: (url, options = {}) => {
-        console.log(options.params);
+        //console.log(options.params);
         return makeRequest({ method: "GET", url, params: options.params  }); //headers: options.headers
     },
 

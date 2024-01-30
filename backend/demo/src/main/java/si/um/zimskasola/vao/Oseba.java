@@ -1,11 +1,15 @@
 package si.um.zimskasola.vao;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import si.um.zimskasola.dto.OsebaDto;
+
+import java.time.LocalDate;
 
 @Entity
 @Data
@@ -19,6 +23,11 @@ public class Oseba {
     private String ime, priimek, upr_ime, geslo;
     private int starost;
 
+    @ManyToOne // Many Oseba entities can be associated with one Paket entity
+    private Paket paket; // This represents the relationship with the Paket entity
+
+    //@Column(name = "expiration_date")
+    private LocalDate expirationDate;
 
     public OsebaDto toDto() {
         return new OsebaDto(id, ime, priimek, starost, upr_ime, geslo);
